@@ -1,0 +1,28 @@
+type Student {
+    id: ID!
+    name: String!
+    department: String!
+}
+
+enum Department {
+    MCA
+    MBA
+    MCOM
+    MA
+}
+
+input CreateStudent {
+    name: String!
+    department: String!
+}
+
+type Query {
+    getStudent(id: ID!): Student
+    getStudents: [Student]
+}
+
+type Mutation {
+    createStudent(input: CreateStudent): Student
+    deleteStudent(id: ID!): String!
+}
+
